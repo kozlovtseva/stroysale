@@ -1,7 +1,7 @@
 import React from "react";
 import { Store } from "redux";
 import { Provider } from "react-redux";
-import { Router, Route, Switch, Redirect } from "react-router-dom";
+import { Route, Switch, Redirect } from "react-router-dom";
 import { ConnectedRouter } from "connected-react-router";
 import { connect } from "react-redux";
 
@@ -19,19 +19,21 @@ interface Props {
 
 const App: React.SFC<Props> = props => {
     const app =
-        props.isAuthenticated !== null ? (
-            <Router history={props.history}>
-                <Route component={Main} />
-            </Router>
+        props.isAuthenticated === true ? (
+            <Route exact path="/" component={Main} />
         ) : (
-            <Redirect to={{ pathname: "/login" }} /> //если пользователь не прошел авторизацию
+            <Route path="/">
+                <Redirect to="/login" />
+            </Route>
         );
     return (
         <Provider store={props.store}>
             <ConnectedRouter history={props.history}>
                 <Switch>
+                    <Route path="/login">
+                        <Auth />
+                    </Route>
                     {app}
-                    <Route exact path="/login" component={Auth} />
                 </Switch>
             </ConnectedRouter>
         </Provider>
