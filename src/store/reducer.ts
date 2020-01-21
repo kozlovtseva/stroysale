@@ -24,7 +24,7 @@ export const authReducer: Reducer<AuthState> = (
             return { ...state, loading: true };
         }
         case AuthActionTypes.LOGIN_SUCCESS: {
-            setToken(action.payload);
+            setToken(action.payload.token.token);
             return {
                 ...state,
                 ...action.payload,
