@@ -18,8 +18,8 @@ export interface AppState {
 
 export const createRootReducer = (history: History) =>
     combineReducers({
-        auth: authReducer,
-        router: connectRouter(history)
+        router: connectRouter(history),
+        auth: authReducer
     });
 
 export function* rootSaga() {

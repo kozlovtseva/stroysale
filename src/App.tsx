@@ -8,8 +8,8 @@ import { connect } from "react-redux";
 import { History } from "history";
 import { AppState } from "./store/store";
 
-import Login from "./components/Login";
-import Main from "./components/Main";
+import Auth from "./pages/Auth";
+import Main from "./pages/Main";
 
 interface Props {
     history: History;
@@ -31,7 +31,7 @@ const App: React.SFC<Props> = props => {
             <ConnectedRouter history={props.history}>
                 <Switch>
                     {app}
-                    <Route exact path="/login" component={Login} />
+                    <Route exact path="/login" component={Auth} />
                 </Switch>
             </ConnectedRouter>
         </Provider>
