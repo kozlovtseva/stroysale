@@ -56,20 +56,37 @@ interface Props {
 const Form: React.FC<Props> = ({ onSubmit, error }) => {
     const [email, setLogin] = useState("");
     const [password, setPassword] = useState("");
+    const [emailError, setEmailError] = useState("");
+    const [passwordError, setPasswordError] = useState("");
+
+    const checkErrors = (email: string, password: string) => {
+        email.length === 0
+            ? setEmailError("Обязательное поле!")
+            : setEmailError("");
+        password.length === 0
+            ? setPasswordError("Обязательное поле!")
+            : setPasswordError("");
+    };
 
     const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
-        onSubmit && onSubmit({ email, password });
-        setLogin("");
-        setPassword("");
+        if (email.length > 0 && password.length > 0) {
+            onSubmit && onSubmit({ email, password });
+            setLogin("");
+            setPassword("");
+        } else {
+            checkErrors(email, password);
+        }
     };
 
     const handleSetEmail = (e: React.ChangeEvent<HTMLInputElement>) => {
         setLogin(e.currentTarget.value);
+        checkErrors(email, password);
     };
 
     const handleSetPassword = (e: React.ChangeEvent<HTMLInputElement>) => {
         setPassword(e.currentTarget.value);
+        checkErrors(email, password);
     };
     console.log(error);
     const classes = useStyles();
@@ -79,19 +96,23 @@ const Form: React.FC<Props> = ({ onSubmit, error }) => {
                 fullWidth
                 className={classes.input}
                 id="email_input"
-                label="Почта*"
+                label="Почта"
+                error={emailError.length === 0 ? false : true}
                 value={email}
                 onChange={handleSetEmail}
                 variant="outlined"
+                helperText={emailError}
             />
             <CssTextField
                 fullWidth
                 className={classes.input}
                 id="password_input"
-                label="Пароль*"
+                error={passwordError.length === 0 ? false : true}
+                label="Пароль"
                 value={password}
                 onChange={handleSetPassword}
                 variant="outlined"
+                helperText={passwordError}
             />
             <FormControlLabel
                 control={

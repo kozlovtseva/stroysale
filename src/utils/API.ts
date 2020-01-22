@@ -7,6 +7,7 @@ export function authenticate(options: Options) {
         { email: "second@mail.ru", password: "second" }
     ];
     const user = data.find(x => x.email === email);
+
     if (user === undefined) {
         return {
             status: 400,

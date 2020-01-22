@@ -7,5 +7,6 @@ export const setToken = (token: string) => {
 };
 
 export const isAuthenticated = (): boolean => {
+    // localStorage.removeItem("jwt");
     return Boolean(localStorage.getItem("jwt"));
 };
