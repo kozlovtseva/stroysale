@@ -1,3 +1,20 @@
+### Тестовое задание для StroySale(окно авторизации)
+
+## Запустить проект
+
+### `npm init`
+
+### `yarn start`
+
+Использовала: TypeScript, ReactJS, Redux, Redux Saga, Styled-components, MaterialUI
+
+Авторизация:
+        email: "first@mail.ru", password: "first"
+или
+        email: "second@mail.ru", password: "second"
+
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
