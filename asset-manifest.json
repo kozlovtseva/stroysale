@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/stroysale/static/css/main.5ecd60fb.chunk.css",
+    "main.js": "/stroysale/static/js/main.811f0619.chunk.js",
+    "main.js.map": "/stroysale/static/js/main.811f0619.chunk.js.map",
+    "runtime-main.js": "/stroysale/static/js/runtime-main.71569d08.js",
+    "runtime-main.js.map": "/stroysale/static/js/runtime-main.71569d08.js.map",
+    "static/js/2.d90d00a6.chunk.js": "/stroysale/static/js/2.d90d00a6.chunk.js",
+    "static/js/2.d90d00a6.chunk.js.map": "/stroysale/static/js/2.d90d00a6.chunk.js.map",
+    "index.html": "/stroysale/index.html",
+    "precache-manifest.d58e265643ae81d4553a48b0afcdb377.js": "/stroysale/precache-manifest.d58e265643ae81d4553a48b0afcdb377.js",
+    "service-worker.js": "/stroysale/service-worker.js",
+    "static/css/main.5ecd60fb.chunk.css.map": "/stroysale/static/css/main.5ecd60fb.chunk.css.map",
+    "static/js/2.d90d00a6.chunk.js.LICENSE": "/stroysale/static/js/2.d90d00a6.chunk.js.LICENSE"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.71569d08.js",
+    "static/js/2.d90d00a6.chunk.js",
+    "static/css/main.5ecd60fb.chunk.css",
+    "static/js/main.811f0619.chunk.js"
+  ]
+}
